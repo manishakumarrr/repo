@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<link rel="stylesheet" type"text/css" href="css/regcss.css">
+		<script src="jquery-3.3.1.min.js"></script>
+		
+		
+	</head>
+	<body>
+		<div class="register">
+			<form id="registration" action="reg1.php" method="POST">
+				<div class="title"><p style="font-family: verdana;
+					color: white;
+					font-size: 27px">REGISTER HERE!</p>
+				</div>
+			<br/>
+				<input type="text" name="sname" id="button" placeholder="Enter your name" pattern="[a-z A-Z]{3,10}" 
+				title="Name should only contain lowercase,Uppercase letters. e.g. John" required > 
+				<br/><br/>
+				<input type="radio" name="gender" id="but" >
+				<span id="but">MALE</span>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="gender" id="but">
+				<span id="but">FEMALE</span>
+				<br/><br/>
+				<input type="text" name="address" id="button" placeholder="Enter Your Address" > <br/><br/>
+				<input type="text" name="phone" id="ph" placeholder="Enter your phone number" pattern="[0-9]{10,10}" title="Number should consist of 10 Digits. e.g. 9334567899" required > <br/><br/>
+
+				<input type="password" placeholder="Password" id="password"  /> <br/><br/>  
+
+				<input type="password" placeholder="Confirm Password" name="pass1" id="confirm_password" /> <br/><br/>
+				<h4 id='message'></h4>
+
+
+				<input type="submit" value="proceed" class="button">
+		</form>
+	</div>
+
+<script >
+			
+	$('#password, #confirm_password').on('keyup', function () {
+	  if ($('#password').val() == $('#confirm_password').val()) {
+	    $('#message').html('Matching').css('color', 'green');
+	  } else 
+	    $('#message').html('Not Matching').css('color', 'red');
+	});
+
+		</script>
+</body>
+</html>
